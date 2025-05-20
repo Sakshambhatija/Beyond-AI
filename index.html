@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Beyond AI 🤖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .clear-btn {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .clear-btn button {
+      padding: 6px 14px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Beyond AI 🤖</h1>
+      <h>most trusted AI across others</h>
+    </header>
+
+    <!-- Dropdown for selecting AI model -->
+    <div class="dropdown-container" style="text-align:center; margin: 10px 0;">
+      <label for="model-select" style="font-weight: 600;">Choose AI Model: </label>
+      <select id="model-select" class="model-dropdown" style="padding: 6px 10px; border-radius: 6px;">
+        <option value="gemini">Gemini</option>
+        <option value="blackbox">Blackbox</option>
+        <option value="google-cloud">Google Cloud 3.0</option>
+        <option value="chatgpt">ChatGPT</option>
+        <option value="deepseek">DeepSeek</option>
+      </select>
+    </div>
+
+    <main class="chat-window" id="chat-window"></main>
+
+    <form class="input-container" onsubmit="sendMessage(); return false;">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Ask me anything..."
+        class="input-box"
+        autocomplete="off"
+        required
+      />
+      <button type="submit">Send</button>
+    </form>
+
+    <!-- Clear Chat Button -->
+    <div class="clear-btn">
+      <button onclick="clearChat()">Clear Chat</button>
+    </div>
+  </div>
+
+  <script src="chat.js"></script>
+  <script>
+    function clearChat() {
+      document.getElementById("chat-window").innerHTML = "";
+    }
+  </script>
+</body>
+</html>
